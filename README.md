@@ -4,7 +4,7 @@ Magically document prolog source files based on predicate and variable naming co
 
 ```prolog
 
- :- pack_install('https://github.com/TeamSPoon/pack_instant_prolog_docs.git').
+ :- pack_install('https://github.com/TeamSPoon/instant_prolog_docs.git').
 
 ```
 
