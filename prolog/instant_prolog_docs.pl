@@ -78,6 +78,9 @@
             attempt_head_varnames_0/1,
             helper_name0/1, is_crossfile_module_0/1, make_summary0/3, mpred_source_file_0/2, skip_functor_export_0/1, to_comparable_name_arity/3, to_mfa_0/4
           ]).
+
+:- set_module(class(library)).
+
 :- meta_predicate fixup_doc_args(4,?,?,*,*).
 :- meta_predicate notes_to_better_text(2,*,*).
 :- meta_predicate list_item_per_line(0,*,*,*),
@@ -86,7 +89,7 @@
 :- (module_transparent current_predicate_mfa/3, summary_ending/2, export_file_preds/0, export_file_preds/1, export_file_preds/6, export_module_preds/0, functor_compare/3, helper_name/1, helper_name0/1, is_crossfile_module_0/1, list_file_preds/0,
   list_file_preds/1, list_file_preds/2, longer_sumry/2, make_l_summary/3, make_module_name/2, module_meta_transparent/1, mpred_prolog_only_module/1, mpred_source_file/2, merge_mode_and_varname/3, no_location/3, portray_clause_pi_LR/2, portray_clause_pi_UD/2, autodoc_pred/2, scan_and_list_file_preds/1, skip_functor_export_0/1, some_flocation/3, some_location/3, target_module/2, to_comparable_name_arity/3, to_mfa_0/4, write_modules/0).
 :- export((helper_name0/1, is_crossfile_module_0/1, make_summary0/3, mpred_source_file_0/2, skip_functor_export_0/1, to_comparable_name_arity/3, to_mfa_0/4)).
-% :- shared_multifile(baseKB:sf_known/4).
+% :- kb_shared(baseKB:sf_known/4).
 
 :- dynamic(mpred_prolog_only_module/1).
 /*
@@ -342,7 +345,7 @@ list_file_preds(S,FM):-
    portray_clause_pi_LR( thread_local,ThreadLocal),subtract(Dynamic,ThreadLocal,DynamicL),   
    portray_clause_pi_LR( export,Non_Exports),
    portray_clause_pi_LR( dynamic,Dynamic),
-   portray_clause_pi_LR( shared_multifile,DynamicL),
+   portray_clause_pi_LR( kb_shared,DynamicL),
    portray_clause_pi_LR( volatile,Volatile))),!.
    
 
@@ -583,8 +586,8 @@ autodoc_file(File):-
    read_source_file_vars(File),
    retractall(t_l:last_predicate_help_shown(_,_,_)),
    retractall(t_l:last_source_file_help_shown(File,_,_)),
-w_tl(set_prolog_flag(xref,false),
- w_tl(t_l:disable_px,
+locally(set_prolog_flag(xref,false),
+ locally(t_l:disable_px,
  must_det_l((
    make_module_name(File,M),
    M:convert_to_dynamic(M,'$pldoc',4),
@@ -710,7 +713,7 @@ autodoc_stream_data(Src,M, File,FromLine1-_EndingLine,Term,_Expanded,_Vs):-
    FromLine is FromLine1-0,
    strip_module(Term,_MU,PI),
    get_functor(PI,F,A),
-   w_tl(t_l:file_loc(File:FromLine),
+   locally(t_l:file_loc(File:FromLine),
      ( copy_until_line(Src,FromLine), autodoc_stream_pred(FromLine,File,M:F/A)
        )),!.
 
