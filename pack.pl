@@ -1,5 +1,5 @@
 name(instant_prolog_docs).
-version('1.1.115').
+version('1.1.117').
 title('Magically document prolog source files based on predicate and variable naming conventions').
 keywords([tools,pldoc,documentation]).
 author( 'Douglas Miles', 'http://www.linkedin.com/in/logicmoo' ).
