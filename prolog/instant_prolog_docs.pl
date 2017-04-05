@@ -101,7 +101,7 @@
   :- user:use_module(library(http/http_parameters)).
   :- user:use_module(library(http/html_write)).
   :- user:use_module(library(http/mimetype)).
-  :- user:use_module(library(dcg/basics)).
+  %:- user:use_module(library(dcg/basics)).
   :- user:use_module(library(http/http_dispatch)).
   :- user:use_module(library(http/http_hook)).
   :- user:use_module(library(http/http_path)).
