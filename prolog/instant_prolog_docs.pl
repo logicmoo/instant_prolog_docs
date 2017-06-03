@@ -96,46 +96,46 @@
 */
 :- if(exists_source(library(pldoc))).
 
-  :- user:use_module(library(pldoc)).
-  :- user:use_module(library(http/thread_httpd)).
-  :- user:use_module(library(http/http_parameters)).
-  :- user:use_module(library(http/html_write)).
-  :- user:use_module(library(http/mimetype)).
-  %:- user:use_module(library(dcg/basics)).
-  :- user:use_module(library(http/http_dispatch)).
-  :- user:use_module(library(http/http_hook)).
-  :- user:use_module(library(http/http_path)).
-  :- user:use_module(library(http/http_wrapper)).
-  :- user:use_module(library(uri)).
-  :- user:use_module(library(debug)).
-  :- user:use_module(library(lists)).
-  :- user:use_module(library(url)).
-  :- user:use_module(library(socket)).
-  :- user:use_module(library(option)).
-  :- user:use_module(library(error)).
-  :- user:use_module(library(www_browser)).
-  :- user:use_module(library(pldoc/doc_process)).
-  :- user:use_module(library(pldoc/doc_htmlsrc)).
-  :- user:use_module(library(pldoc/doc_html)).
-  :- user:use_module(library(pldoc/doc_index)).
-  :- user:use_module(library(pldoc/doc_search)).
-  :- user:use_module(library(pldoc/doc_man)).
-  :- user:use_module(library(pldoc/doc_wiki)).
-  :- user:use_module(library(pldoc/doc_util)).
-  :- user:use_module(library(pldoc/doc_access)).
-  :- user:use_module(library(pldoc/doc_pack)).
+  :- use_module(library(pldoc)).
+  :- use_module(library(http/thread_httpd)).
+  :- use_module(library(http/http_parameters)).
+  :- use_module(library(http/html_write)).
+  :- use_module(library(http/mimetype)).
+  %:- use_module(library(dcg/basics)).
+  :- use_module(library(http/http_dispatch)).
+  :- use_module(library(http/http_hook)).
+  :- use_module(library(http/http_path)).
+  :- use_module(library(http/http_wrapper)).
+  :- use_module(library(uri)).
+  :- use_module(library(debug)).
+  :- use_module(library(lists)).
+  :- use_module(library(url)).
+  :- use_module(library(socket)).
+  :- use_module(library(option)).
+  :- use_module(library(error)).
+  :- use_module(library(www_browser)).
+  :- use_module(library(pldoc/doc_process)).
+  :- use_module(library(pldoc/doc_htmlsrc)).
+  :- use_module(library(pldoc/doc_html)).
+  :- use_module(library(pldoc/doc_index)).
+  :- use_module(library(pldoc/doc_search)).
+  :- use_module(library(pldoc/doc_man)).
+  :- use_module(library(pldoc/doc_wiki)).
+  :- use_module(library(pldoc/doc_util)).
+  :- use_module(library(pldoc/doc_access)).
+  :- use_module(library(pldoc/doc_pack)).
 
 % start a unused server
-:- user:use_module(library(doc_http)).
-%:- user:use_module(library(doc_html)).
+:- use_module(library(doc_http)).
+%:- use_module(library(doc_html)).
 :- endif.
 
 :- if(exists_source(library(pldoc))).
-:- user:use_module(library(pldoc), []).
+:- use_module(library(pldoc), []).
 	% Must be loaded before doc_process
-:- user:use_module(library(pldoc/doc_process)).
+:- use_module(library(pldoc/doc_process)).
 :- endif.
-:- user:use_module(library(prolog_xref)).
+:- use_module(library(prolog_xref)).
 
 :- if(exists_source(library(pldoc))).
 
@@ -517,7 +517,7 @@ export_module_preds:- source_context_module(M),source_file_property(S,module(M))
 
 :- if(exists_source(library(pldoc/doc_pack))).
 
-:- user:use_module(library(pldoc/doc_pack)).
+:- use_module(library(pldoc/doc_pack)).
 
 :-endif.
 

@@ -8,5 +8,5 @@ maintainer( 'TeamSPoon', 'https://github.com/TeamSPoon/' ).
 home( 'https://github.com/TeamSPoon/instant_prolog_docs' ).
 download( 'https://github.com/TeamSPoon/instant_prolog_docs/release/*.zip' ).
 requires(must_trace).
-autoload(true).
+autoload(false).
 
