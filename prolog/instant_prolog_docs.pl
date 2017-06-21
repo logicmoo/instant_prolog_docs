@@ -97,9 +97,10 @@
 :- if(exists_source(library(pldoc))).
 
   :- use_module(library(pldoc)).
+  /*
   :- use_module(library(http/thread_httpd)).
   :- use_module(library(http/http_parameters)).
-  :- use_module(library(http/html_write)).
+  %:- use_module(library(http/html_write)).
   :- use_module(library(http/mimetype)).
   %:- use_module(library(dcg/basics)).
   :- use_module(library(http/http_dispatch)).
@@ -114,6 +115,7 @@
   :- use_module(library(option)).
   :- use_module(library(error)).
   :- use_module(library(www_browser)).
+  */
   :- use_module(library(pldoc/doc_process)).
   :- use_module(library(pldoc/doc_htmlsrc)).
   :- use_module(library(pldoc/doc_html)).
