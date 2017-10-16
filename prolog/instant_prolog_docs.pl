@@ -589,7 +589,7 @@ autodoc_file(File):-
    retractall(t_l:last_predicate_help_shown(_,_,_)),
    retractall(t_l:last_source_file_help_shown(File,_,_)),
 locally(set_prolog_flag(xref,false),
- locally(t_l:disable_px,
+ locally_tl(disable_px,
  must_det_l((
    make_module_name(File,M),
    M:convert_to_dynamic(M,'$pldoc',4),
@@ -715,7 +715,7 @@ autodoc_stream_data(Src,M, File,FromLine1-_EndingLine,Term,_Expanded,_Vs):-
    FromLine is FromLine1-0,
    strip_module(Term,_MU,PI),
    get_functor(PI,F,A),
-   locally(t_l:file_loc(File:FromLine),
+   locally_tl(file_loc(File:FromLine),
      ( copy_until_line(Src,FromLine), autodoc_stream_pred(FromLine,File,M:F/A)
        )),!.
 
