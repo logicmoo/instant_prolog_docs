@@ -116,7 +116,11 @@
   :- use_module(library(error)).
   :- use_module(library(www_browser)).
   */
-  :- use_module(library(pldoc/doc_process)).
+:- if(exists_source(library(pldoc))).
+:- user:use_module(library(pldoc), []).
+	% Must be loaded before doc_process
+:- user:use_module(library(pldoc/doc_process)).
+:- endif.
   :- use_module(library(pldoc/doc_htmlsrc)).
   :- use_module(library(pldoc/doc_html)).
   :- use_module(library(pldoc/doc_index)).
