@@ -116,24 +116,27 @@
   :- use_module(library(error)).
   :- use_module(library(www_browser)).
   */
-:- if(exists_source(library(pldoc))).
+:- if(exists_source(library(pldoc/doc_process))).
 :- user:use_module(library(pldoc), []).
 	% Must be loaded before doc_process
 :- user:use_module(library(pldoc/doc_process)).
 :- endif.
-  :- use_module(library(pldoc/doc_htmlsrc)).
-  :- use_module(library(pldoc/doc_html)).
-  :- use_module(library(pldoc/doc_index)).
-  :- use_module(library(pldoc/doc_search)).
-  :- use_module(library(pldoc/doc_man)).
-  :- use_module(library(pldoc/doc_wiki)).
-  :- use_module(library(pldoc/doc_util)).
-  :- use_module(library(pldoc/doc_access)).
-  :- use_module(library(pldoc/doc_pack)).
+
+/*
+:- use_module(library(pldoc/doc_htmlsrc)).
+:- use_module(library(pldoc/doc_html)).
+:- use_module(library(pldoc/doc_index)).
+:- use_module(library(pldoc/doc_search)).
+:- use_module(library(pldoc/doc_man)).
+:- use_module(library(pldoc/doc_wiki)).
+:- use_module(library(pldoc/doc_util)).
+:- use_module(library(pldoc/doc_access)).
+:- use_module(library(pldoc/doc_pack)).
 
 % start a unused server
 :- use_module(library(doc_http)).
 %:- use_module(library(doc_html)).
+*/
 :- endif.
 
 :- if(exists_source(library(pldoc))).
@@ -141,10 +144,10 @@
 	% Must be loaded before doc_process
 :- use_module(library(pldoc/doc_process)).
 :- endif.
+
 :- use_module(library(prolog_xref)).
 
 :- if(exists_source(library(pldoc))).
-
 :- doc_collect(true).
 
 :-endif.
