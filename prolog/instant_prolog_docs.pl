@@ -115,12 +115,12 @@
   :- use_module(library(option)).
   :- use_module(library(error)).
   :- use_module(library(www_browser)).
-  */
 :- if(exists_source(library(pldoc/doc_process))).
 :- user:use_module(library(pldoc), []).
 	% Must be loaded before doc_process
 :- user:use_module(library(pldoc/doc_process)).
 :- endif.
+  */
 
 /*
 :- use_module(library(pldoc/doc_htmlsrc)).
@@ -138,7 +138,7 @@
 %:- use_module(library(doc_html)).
 */
 :- endif.
-
+/*
 :- if(exists_source(library(pldoc))).
 :- use_module(library(pldoc), []).
 	% Must be loaded before doc_process
@@ -151,7 +151,7 @@
 :- doc_collect(true).
 
 :-endif.
-
+*/
 
 %= 	 	 
 
@@ -523,13 +523,13 @@ export_file_preds(NotUser,S,M,P,F,A):- must(predicate_property(M:P,transparent))
 export_module_preds:- current_prolog_flag(xref,true),!.
 export_module_preds:- source_context_module(M),source_file_property(S,module(M)),export_file_preds(S),forall(source_file_property(S,includes(F,_)),export_file_preds(F)).
 
-
+/*
 :- if(exists_source(library(pldoc/doc_pack))).
 
 :- use_module(library(pldoc/doc_pack)).
 
 :-endif.
-
+*/
 
 %= 	 	 
 
